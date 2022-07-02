@@ -6,7 +6,7 @@
 /*   By: amounach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 04:29:40 by amounach          #+#    #+#             */
-/*   Updated: 2022/06/28 21:48:07 by amounach         ###   ########.fr       */
+/*   Updated: 2022/07/02 22:14:26 by amounach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
 static int	ft_strlen(char	*str)
 {
 	int	i;
@@ -162,19 +163,32 @@ char	**ft_split(char const *s, char c)
 	return (tab);
 }
 
-int main (int ac, char **av)
+char    **is_valid_input(int ac, char **str)
 {
-    char *sep;
-    char **str;
-    int i;
+ char	*sep;
+ int		i;
+	int		j;
     
+    i = 1;
     sep = " ";
-    str = ft_split(ft_strjoin(ac - 1, av + 1, sep), ' ');
+    str = ft_split(ft_strjoin(ac - 1, &str[i], sep), ' ');
     while(str[i])
     {
         if(!ft_isdigit(*str[i]))
-            return(printf("Error\n"), 0);
-        i++;
+            printf("Error\n");
+		j = i + 1;
+		while (str[j])
+		{
+			if (atoi(str[i]) == atoi(str[j])) // Todos:  must change the system function
+				printf("Error\nNumbers must not be duplicated!");
+			j++;
+		}
+		i++;
     }
-    return (1);
+    return (str);
+}
+
+int main (int ac, char **av)
+{	
+	is_valid_input(ac, av);
 }
