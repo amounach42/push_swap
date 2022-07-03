@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pop_node_bottom.c                                  :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amounach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 22:57:00 by amounach          #+#    #+#             */
-/*   Updated: 2022/07/03 23:03:28 by amounach         ###   ########.fr       */
+/*   Created: 2022/07/03 19:41:48 by amounach          #+#    #+#             */
+/*   Updated: 2022/07/03 19:43:26 by amounach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void    pop_node_bottom(t_stack *stack, t_node *node)
+void    pa(t_stack *a, t_stack *b, int flag)
 {
-    t_node  *tmp;
+    t_node  *node;
 
-    if (stack_is_empty(stack))
+    if (stack_is_empty(b))
         return ;
-    tmp = stack->bottom;
-    stack->bottom = stack->bottom->above;
-    if (stack->size == 1)
-    {
-        stack->top = NULL;
-        stack->bottom = NULL;
-    }
-    else
-        stack->top->bellow = NULL;
-    stack->size--;
-    free(tmp);
+    node = new_node(b->top->num);
 }

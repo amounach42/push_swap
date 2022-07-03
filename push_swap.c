@@ -6,7 +6,7 @@
 /*   By: amounach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 04:29:40 by amounach          #+#    #+#             */
-/*   Updated: 2022/07/02 22:14:26 by amounach         ###   ########.fr       */
+/*   Updated: 2022/07/02 22:18:55 by amounach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,8 +165,8 @@ char	**ft_split(char const *s, char c)
 
 char    **is_valid_input(int ac, char **str)
 {
- char	*sep;
- int		i;
+ 	char	*sep;
+ 	int		i;
 	int		j;
     
     i = 1;

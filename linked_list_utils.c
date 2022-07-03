@@ -11,6 +11,7 @@ typedef struct s_list
 t_list *new_node(int num)
 {
 	t_list *node;
+	
 	node = malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
